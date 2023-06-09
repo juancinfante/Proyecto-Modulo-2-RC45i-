@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylos.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/css/uikit.min.css" />
+
+
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+        <!-- NAVBAR UIKIT -->
+        <nav class="uk-navbar-container" uk-dropnav="mode: click">
+            <div class="container-fluid ps-4">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active"><a href="#">TIENDA</a></li>
+                            <li><a href="#" class="d-none d-md-inline-flex">Contacto</a></li>
+                            <li><a href="#" class="d-none d-md-inline-flex">Nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right" id="navnone">
+                        <ul class="uk-navbar-nav d-none d-md-inline-flex">
+                            <li><a href="">🛒<span class="uk-badge">0</span></a></li>
+                            <li id="admin-link"><a href="./pages/admin.html">Admin</a></li>
+                            <li>
+                                <a href="#">Cuenta<span uk-drop-parent-icon></span></a>
+                                <div class="uk-dropdown">
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR
+                                                SESION</a></li>
+                                        <li id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">CREAR
+                                                CUENTA</a></li>
+                                        <li class="nav-item" id="logout-link">
+                                            <a class="nav-link" onclick="logout()">Salir</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>                          
+                                <a class="d-md-none" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav-primary"></a>
+                                <div id="offcanvas-nav-primary" uk-offcanvas="flip: true">
+                                    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                                
+                                        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                                            <li class="uk-active"><a href="#">TIENDA</a></li>
+                                            <li class="uk-parent"><a href="#">CONTACTO</a></li>
+                                            <li class="uk-parent"><a href="#">NOSOTROS</a></li>
+                                            <li class="uk-parent" id="admin-link"><a href="./pages/admin.html">ADMIN</a></li>
+                                            <li class="uk-parent" id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR SESION</a></li>
+                                            <li class="uk-parent" id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">REGISTRARSE</a></li>
+                                            <li class="uk-parent" id="logout-link"><a href="#" onclick="logout()">CERRAR SESION</a></li>
+                                        </ul>
+                                
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+
+
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- PORTADA DESCATADA -->
+        <div class="row d-flex align-items-center" id="img-destacada" style="margin: auto">
+            <div class="col-6 d-flex flex-column p-5">
+                <h1>ZOOMX INVINCIBLE RUN FLYKNIT NIKE</h1>
+                <p>Lleva tus carreras al límite. El Nike ZoomX Invincible Run Flyknit 2 es súper suave y te permite
+                    desarrollar tu potencial cuando tus pies golpean el pavimento.</p>
+                <p>$99999</p>
+            </div>
+            <div class="col-6">
+                <img src="https://www.digitalsport.com.ar/files/products/641aa63a883ca-570039-500x500.jpg" alt="">
+            </div>
+        </div>
+
+
+
+
+        <!-- MODAL LOGIN -->
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">LOGIN</h2>
+                <form class="uk-form-stacked" id="login-form">
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Usuario</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" type="text" name="username" required>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" type="password" name="password" required>
+                        </div>
+                    </div>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">CANCELAR</button>
+                    <button class="uk-button uk-button-primary" type="submit">Login</button>
+                </form>
+                </p>
+            </div>
+        </div>
+
+
+        <!-- MODAL REGISTRO -->
+
+        <div id="modal-example2" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Registro</h2>
+                <form class="uk-form-stacked" id="register-form">
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Usuario</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" type="text" name="username" minlength="6" maxlength="12" required>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Email</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" type="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" type="password" name="password" minlength="6" maxlength="12"
+                                required>
+                        </div>
+                    </div>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">CANCELAR</button>
+                    <button class="uk-button uk-button-primary" type="submit">Registrar</button>
+                </form>
+                </p>
+            </div>
+        </div>
+
+        <!-- -->
+
+        <!-- PUBLICIDAD MARCAS -->
+        <div class="row m-0">
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/bab1c5c531c40883afc3e5e7a2947a3b.png" alt="">
+            </div>
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/271a16ce061859c49317db5f4f7e3b3b.jpg" alt="">
+            </div>
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/d0b9e5600f6bff7206582d5fd3db45e1.jpg" alt="">
+            </div>
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/4787686af8a8c2aaa724c9396c488b99.jpg" alt="">
+            </div>
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/e0e8bda562ef464b7f112287ba41e3b6.jpg" alt="">
+            </div>
+            <div class="col-2 mt-5 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/banners/f34e4263dd00203e301a875c5a9519c9.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- CATEGORIAS -->
+
+        <nav uk-dropnav="mode: click" class="mt-5">
+            <ul class="uk-subnav ms-2">
+                <li class="uk-active">
+                    <a href="#" class="uk-active">
+                        <h4>CATEGORIAS</h4> <span uk-drop-parent-icon></span>
+                    </a>
+                    <div class="uk-dropdown">
+                        <ul class="uk-nav uk-dropdown-nav ">
+                            <li><a data-cat="All" onclick="filter(event)">TODAS</a></li>
+                            <li><a data-cat="Adidas" onclick="filter(event)">ADIDAS</a></li>
+                            <li><a data-cat="Nike" onclick="filter(event)">NIKE</a></li>
+                            <li><a data-cat="Puma" onclick="filter(event)">PUMA</a></li>
+                            <li><a data-cat="Fila" onclick="filter(event)">FILA</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="uk-active">
+                    <a href="#">
+                        <h4>FILTRAR</h4><span uk-drop-parent-icon></span>
+                    </a>
+                    <div class="uk-dropdown">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a onclick="orderMay()">MAYOR A MENOR</a></li>
+                            <li><a onclick="orderMen()">MENOR A MAYOR</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row mt-5" id="zapasTable">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/634dc2b94d3f1-554191-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Nike</span>
+                                <br>FLEX EXPERIENCE RUN 11 NIKE
+                            </h5>
+                            <p>$34999<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/634dc2982cf38-562554-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Nike</span>
+                                <br>REVOLUTION 6 NIKE
+                            </h5>
+                            <p>$19299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/640a48817319c-590496-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Adidas</span>
+                                <br>RESPONSE SUPER 3.0 ADIDAS
+                            </h5>
+                            <p>$54299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/634dc37526284-574301-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Adidas</span>
+                                <br>QUESTAR ADIDAS
+                            </h5>
+                            <p>$39299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/646f3ec93e826-610929-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Fila</span>
+                                <br>MAGNUS FILA
+                            </h5>
+                            <p>$23299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/646f3ed0ce495-610950-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Fila</span>
+                                <br>RESEARCH FILA
+                            </h5>
+                            <p>$19299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/640652cec42e5-571260-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Puma</span>
+                                <br>ELECTRIFY NITRO 2 PUMA
+                            </h5>
+                            <p>$19299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="" class="card-shoe">
+                        <div class="uk-card uk-card-default uk-card-hover uk-card-body m-0">
+                            <img src="https://www.digitalsport.com.ar/files/products/63b8277f48392-571813-500x500.jpg"
+                                alt="img">
+                            <h5>
+                                <span>Puma</span>
+                                <br>RETALIATE 2 ADP PUMA
+                            </h5>
+                            <p>$49299<br>
+                                <span style="font-size: 12px;">3 cuotas de $16999</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/navcheck.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/logout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit-icons.min.js"></script>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/c1de055385.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
