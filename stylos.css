@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.imagen-destacada img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* USUARIOS */
+.editUsuarios:hover{
+    cursor: pointer;
+}
+
+/* ADMIN */
+
+.perfil-admin{
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 12px;
+}
+.perfil-admin img{
+    margin-bottom: 10px;
+    width: 200px;
+}
+.info-admin{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.info-admin p{
+    margin: 0 0 10px 0;
+    
+}
+
+.card-shoe:hover{
+    cursor: pointer;
+    text-decoration: none;
+}
+span:hover{
+    cursor: pointer;
+}
+
+.trProducts:hover{
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.imagen-destacada{
+    width: 100%;
+}
+
+.yellow{
+    color: yellow;
+}
+.fa-star:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 775){
+    .navnone{
+        display: block;
+    }
+}
+
+@media (max-width: 765px) {
+    table thead tr{
+        display: none;
+    }
+    table tr{
+        display: block;
+        margin-bottom: 30px;
+    }
+    table td{
+        text-align: right;
+        display: block;
+    }
+    table td::before{
+        content: attr(data-title) " : ";
+        float: left;
+        font-weight: bold;
+    }
+    tbody tr{
+        background-color: #d0d0d095;
+    }
+}
