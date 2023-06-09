@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylos.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/css/uikit.min.css" />
+    <!-- FONT AWESOM -->
+    <script src="https://kit.fontawesome.com/472eb7a910.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div class="container-fluid p-0">
+<!-- NAVBAR UIKIT -->
+<nav class="uk-navbar-container" uk-dropnav="mode: click">
+    <div class="container-fluid ps-4">
+        <div uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="../index.html">TIENDA</a></li>
+                    <li><a href="#" class="d-none d-md-inline-flex">Contacto</a></li>
+                    <li><a href="#" class="d-none d-md-inline-flex">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-right" id="navnone">
+                <ul class="uk-navbar-nav d-none d-md-inline-flex">
+                    <li><a href="">🛒<span class="uk-badge">0</span></a></li>
+                    <li id="admin-link"><a href="./admin.html">Admin</a></li>
+                    <li>
+                        <a href="#">Cuenta<span uk-drop-parent-icon></span></a>
+                        <div class="uk-dropdown">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR
+                                        SESION</a></li>
+                                <li id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">CREAR
+                                        CUENTA</a></li>
+                                <li class="nav-item" id="logout-link">
+                                    <a class="nav-link" onclick="logout()">Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>                          
+                        <a class="d-md-none" uk-navbar-toggle-icon type="button" uk-toggle="target: #offcanvas-nav-primary"></a>
+                        <div id="offcanvas-nav-primary" uk-offcanvas="flip: true">
+                            <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                        
+                                <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                                    <li class="uk-active"><a href="../index.html">TIENDA</a></li>
+                                    <li class="uk-parent"><a href="#">CONTACTO</a></li>
+                                    <li class="uk-parent"><a href="#">NOSOTROS</a></li>
+                                    <li class="uk-parent" id="admin-link"><a href="./admin.html">ADMIN</a></li>
+                                    <li class="uk-parent" id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR SESION</a></li>
+                                    <li class="uk-parent" id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">REGISTRARSE</a></li>
+                                    <li class="uk-parent" id="logout-link"><a href="#" onclick="logout()">CERRAR SESION</a></li>
+                                </ul>
+                        
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+
+
+
+        </div>
+    </div>
+</nav>
+
+
+        <!-- UIKIT SWITCHER -->
+        <div class="row mt-5">
+            
+            <div class="col-12">
+                <button class="uk-button uk-button-default" type="button"
+                    uk-toggle="target: #modal-example7">Agregar producto</button>
+                <ul uk-tab>
+                    <li><a href="#">PRODUCTOS</a></li>
+                    <li><a href="#">USUARIOS</a></li>
+                    <li><a href="#">APROBAR</a></li>
+                </ul>
+                <ul class="uk-switcher uk-margin">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                <th>Descripcion</th>
+                                <th>Publicado</th>
+                                <th>Precio</th>
+                                <th>Editar</th>
+                                <th>Destacar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTable">
+
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Email</th>
+                                <th>Estado</th>
+                                <th>EDIT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaUsuarios">
+
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Email</th>
+                                <th>Estado</th>
+                                <th>EDIT</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaAprobar">
+
+                        </tbody>
+                    </table>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL AGREGAR PRODUCTO -->
+    <div id="modal-example7" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Agregar Producto</h2>
+            <form class="uk-form-stacked" id="addProduct-form">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Nombre</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="text" name="productName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Descripcion</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="text" name="productDescription" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <img src="https://th.bing.com/th/id/R.02c67f0a61c1bc8f87ae870f2eebeed6?rik=9on3UWFQ7rZjgg&riu=http%3a%2f%2fwww.labaid.co.jp%2fshop%2fupload%2fsave_image%2f07121131_578456671f103.jpg&ehk=NFeBu6PkE17Jg9dmRK8qROMwN5Ahz2el8hSV6%2fiIkLg%3d&risl=&pid=ImgRaw&r=0"
+                                onerror="this.src='https://th.bing.com/th/id/R.02c67f0a61c1bc8f87ae870f2eebeed6?rik=9on3UWFQ7rZjgg&riu=http%3a%2f%2fwww.labaid.co.jp%2fshop%2fupload%2fsave_image%2f07121131_578456671f103.jpg&ehk=NFeBu6PkE17Jg9dmRK8qROMwN5Ahz2el8hSV6%2fiIkLg%3d&risl=&pid=ImgRaw&r=0';"
+                                alt=""
+                                id="urlAddReplace">
+                            <label class="uk-form-label" for="form-stacked-text">URL imagen</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="text" name="productImage" id="urlAddNewProduct" required>
+                            </div>
+                            <button class="uk-button uk-button-default" type="button" onclick="updateAddProductImage()">CARGAR</button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Precio</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="number" name="productPrice" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Categoria</label>
+                        <select aria-label="Custom controls" name="productCategory">
+                            <option value="Nike" selected>Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Puma">Puma</option>
+                            <option value="Fila">Fila</option>
+                        </select>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Publicar</label>
+                        <select aria-label="Custom controls" name="productPublished">
+                            <option value="true" selected>SI</option>
+                            <option value="false">NO</option>
+                        </select>
+                    </div>
+                    <p class="uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button class="uk-button uk-button-primary" type="submit">Agregar</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- MODAL EDITAR PRODUCTO -->
+    <div id="modal-example8" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Editar Producto</h2>
+
+            <form class="uk-form-stacked" id="editProduct-form">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Nombre</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="text" name="productNameEdit" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Descripcion</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="text" name="productDescriptionEdit" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <img src="" onerror="this.src='https://th.bing.com/th/id/R.02c67f0a61c1bc8f87ae870f2eebeed6?rik=9on3UWFQ7rZjgg&riu=http%3a%2f%2fwww.labaid.co.jp%2fshop%2fupload%2fsave_image%2f07121131_578456671f103.jpg&ehk=NFeBu6PkE17Jg9dmRK8qROMwN5Ahz2el8hSV6%2fiIkLg%3d&risl=&pid=ImgRaw&r=0';" id="urlReplace">
+                            <label class="uk-form-label" for="form-stacked-text">URL imagen</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input mb-1" type="text" name="productImageEdit" id="urlNewImg"
+                                    required>
+                            </div>
+                            <button class="uk-button uk-button-default" type="button" onclick="updateImage()">RECARGAR
+                                IMG</button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Precio</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" type="number" name="productPriceEdit" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Categoria</label>
+                            <select aria-label="Custom controls" name="productCategoryEdit">
+                                <option value="Nike" selected>Nike</option>
+                                <option value="Adidas">Adidas</option>
+                                <option value="Puma">Puma</option>
+                                <option value="Fila">Fila</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-stacked-text">Publicar</label>
+                            <select aria-label="Custom controls" name="productPublishedEdit">
+                                <option value="true">SI</option>
+                                <option value="false">NO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p class="uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                        <button class="uk-button uk-button-primary" type="submit">Guardar cambios</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL ACEPTAR USUARIO -->
+    <div id="modal-example5" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Desea aceptar usuario?</p>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">No</button>
+            <button class="uk-button uk-button-primary uk-modal-close" type="button"
+                onclick="aceptarSolicitud()">Si</button>
+        </div>
+    </div>
+
+    <!-- MODAL ELIMINAR USUARIO -->
+    <div id="modal-example4" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Desea eliminar usuario?</p>
+            <button class="uk-button uk-button-default uk-modal-close" type="button">No</button>
+            <button class="uk-button uk-button-primary uk-modal-close" type="button"
+                onclick="eliminarUsuario()">Si</button>
+        </div>
+    </div>
+
+    <!-- MODAL ELIMINAR PRODUCTO -->
+    <div id="modal-example9" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <p>Desea eliminar este producto?</p>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">No</button>
+                <button class="uk-button uk-button-primary uk-modal-close" type="button"
+                    onclick="deleteProduct()">Si</button>
+            </p>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR ESTADO USUARIO -->
+    <div id="modal-example3" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">EDITAR ESTADO</h2>
+            <form class="uk-form-stacked" id="login-form">
+                <div class="uk-margin">
+                    <div uk-form-custom="target: > * > span:first-child">
+                        <label class="uk-form-label" for="form-stacked-text">Estado</label>
+                        <select aria-label="Custom controls" id="select-edit">
+                            <option value ="aprobado">aprobado</option>
+                            <option value = "suspendido">suspendido</option>
+                            <option value= "admin">admin</option>
+                        </select>
+                        <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                            <span></span>
+                            <span uk-icon="icon: chevron-down"></span>
+                        </button>
+                    </div>
+                </div>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">CANCELAR</button>
+                <button class="uk-button uk-button-primary uk-modal-close" type="button"
+                    onclick="editarUsuario()">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/admin.js"></script>
+    <script src="../js/navcheck.js"></script>
+    <script src="../js/logout.js"></script>
+
+    <!-- BOOTSTRAP v5.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- SWEET ALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit-icons.min.js"></script>
+
+</body>
+
+</html>
