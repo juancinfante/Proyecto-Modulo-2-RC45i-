@@ -89,3 +89,27 @@ span:hover{
         background-color: #d0d0d095;
     }
 }
+
+.contenedor-detalle-producto {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+
+.producto {
+    margin-bottom: auto;
+    height: auto;
+}
+
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
