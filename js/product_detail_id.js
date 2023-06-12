@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const paramId= urlParams.get("id");
 const objeto = JSON.parse(localStorage.getItem("zapatillas"));
 
-let elementoFiltrado = objeto.filter(producto => producto.id === paramId);
+let elementoFiltrado = objeto.filter(producto => producto.id == paramId);
 elementoFiltrado = elementoFiltrado[0];
 detail.innerHTML = detalleProducto();
 

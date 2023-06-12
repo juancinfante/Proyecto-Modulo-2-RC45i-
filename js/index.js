@@ -154,6 +154,7 @@ if (zapas == null) {
   const zapaz = JSON.parse(localStorage.getItem('zapatillas'))
   table.innerHTML = "";
   zapaz.forEach(element => {
+    
     if (element.published) {
       table.innerHTML +=
         `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
@@ -167,7 +168,7 @@ if (zapas == null) {
                   <br>${element.name}
               </h5>
               <p>$${element.price}<br>
-                  <span style="font-size: 12px;">3 cuotas de $16999</span>
+                  <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
               </p>
           </div>
           </a>
@@ -188,7 +189,7 @@ function filter(evt) {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a href="" class="card-shoe">
+        <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                 <img src="${element.imgUrl}"
                     alt="">
@@ -197,7 +198,7 @@ function filter(evt) {
                     <br>${element.name}
                 </h5>
                 <p>$${element.price}<br>
-                    <span style="font-size: 12px;">3 cuotas de $16999</span>
+                    <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                 </p>
             </div>
         </a>
@@ -211,7 +212,7 @@ function filter(evt) {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-          <a href="" class="card-shoe">
+          <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
               <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                   <img src="${element.imgUrl}"
                       alt="img">
@@ -220,7 +221,7 @@ function filter(evt) {
                       <br>${element.name}
                   </h5>
                   <p>$${element.price}<br>
-                      <span style="font-size: 12px;">3 cuotas de $16999</span>
+                      <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                   </p>
               </div>
           </a>
@@ -243,7 +244,7 @@ function orderMay() {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a href="" class="card-shoe">
+        <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                 <img src="${element.imgUrl}"
                     alt="img">
@@ -252,7 +253,7 @@ function orderMay() {
                     <br>${element.name}
                 </h5>
                 <p>$${element.price}<br>
-                    <span style="font-size: 12px;">3 cuotas de $16999</span>
+                    <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                 </p>
             </div>
         </a>
@@ -266,7 +267,7 @@ function orderMay() {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a href="" class="card-shoe">
+        <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                 <img src="${element.imgUrl}"
                     alt="img">
@@ -275,7 +276,7 @@ function orderMay() {
                     <br>${element.name}
                 </h5>
                 <p>$${element.price}<br>
-                    <span style="font-size: 12px;">3 cuotas de $16999</span>
+                    <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                 </p>
             </div>
         </a>
@@ -299,7 +300,7 @@ function orderMen() {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a href="" class="card-shoe">
+        <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                 <img src="${element.imgUrl}"
                     alt="img">
@@ -308,7 +309,7 @@ function orderMen() {
                     <br>${element.name}
                 </h5>
                 <p>$${element.price}<br>
-                    <span style="font-size: 12px;">3 cuotas de $16999</span>
+                    <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                 </p>
             </div>
         </a>
@@ -322,7 +323,7 @@ function orderMen() {
       if (element.published) {
         table.innerHTML +=
           `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <a href="" class="card-shoe">
+        <a href="../pages/product_detail.html?id=${element.id}" class="card-shoe">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body ">
                 <img src="${element.imgUrl}"
                     alt="img">
@@ -331,7 +332,7 @@ function orderMen() {
                     <br>${element.name}
                 </h5>
                 <p>$${element.price}<br>
-                    <span style="font-size: 12px;">3 cuotas de $16999</span>
+                    <span style="font-size: 12px;">3 cuotas de $${Math.floor(element.price/3)}</span>
                 </p>
             </div>
         </a>
