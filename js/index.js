@@ -3,14 +3,14 @@ let zapas = JSON.parse(localStorage.getItem('zapatillas'))
 let users = [
   {
     id: 1,
-    username: "juancinfante",
-    password: "ventana12",
+    username: "admin",
+    password: "admin",
     email: "juaninfantejj@gmail.com",
     estado: "admin"
   },
   {
     id: 2,
-    username: "mariocana",
+    username: "juanc",
     password: "123456",
     email: "mario@gmail.com",
     estado: "aprobado"
@@ -18,7 +18,7 @@ let users = [
   {
     id: 3,
     username: "agus777",
-    password: "casamaria",
+    password: "agus123",
     email: "agus@gmail.com",
     estado: "suspendido"
   },
@@ -32,7 +32,7 @@ let users = [
   {
     id: 5,
     username: "josias123",
-    password: "bocabocaboca",
+    password: "cabj0007",
     email: "josias12@gmail.com",
     estado: "pendiente"
   },
@@ -50,7 +50,7 @@ let zapatillas = [
     id: Date.now() + 1,
     name: "FLEX EXPERIENCE RUN 11 NIKE",
     description: "CALZADO ZAPATILLAS NIKE RUNNING FLEX PARA HOMBRE DE RUNNING",
-    detail: "Las zapatillas Flex Experience Run 11 de Nike son la elección perfecta para aquellos que buscan un calzado cómodo y versátilpara correr o hacer ejercicio. Con una parte superior de malla transpirable, se ajusta perfectamente al pie y proporciona una mayor ventilación para combatir la sudoración. La suela de goma es flexible y contribuye a una mayor estabilidad en cada paso, mientras que la espuma suave en el interior brinda una sensación cómoda en el pie durante todo el entrenamiento.",
+    detail: "Las zapatillas Flex Experience Run 11 de Nike son la elección perfecta para aquellos que buscan un calzado cómodo y versátilpara correr o hacer ejercicio. Con una parte superior de malla transpirable, se ajusta perfectamente al pie y proporciona una mayor ventilación para combatir la sudoración.",
     price: 34999,
     imgUrl: "https://www.digitalsport.com.ar/files/products/634dc2b94d3f1-554191-500x500.jpg",
     published: true,
@@ -60,7 +60,7 @@ let zapatillas = [
     id: Date.now() + 2,
     name: "REVOLUTION 6 NIKE",
     description: "CALZADO ZAPATILLAS NIKE RUNNING REVOLUTION PARA HOMBRE DE RUNNING",
-    detail:"Las zapatillas Revolution 6 de Nike destacan por su diseño moderno y elegante, además de ofrecer una excelente comodidad y calidad para realizar distintas actividades. La suela gruesa y acolchada protege al pie de los impactos y proporciona una mayor amortiguación, mientras que la parte superior de malla favorece la transpiración y reduce el sudor. Su ajuste al pie es firme y seguro, permitiendo un mayor control y equilibrio en cada movimiento.",
+    detail:"Las zapatillas Revolution 6 de Nike destacan por su diseño moderno y elegante, además de ofrecer una excelente comodidad y calidad para realizar distintas actividades. La suela gruesa y acolchada protege al pie de los impactos y proporciona una mayor amortiguación.",
     price: 33999,
     imgUrl: "https://www.digitalsport.com.ar/files/products/634dc2982cf38-562554-500x500.jpg",
     published: true,
@@ -70,7 +70,7 @@ let zapatillas = [
     id: Date.now() + 3,
     name: "RESPONSE SUPER 3.0 ADIDAS",
     description: "CALZADO ZAPATILLAS ADIDAS RUNNING RESPONSE PARA HOMBRE DE RUNNING",
-    detail:"Las zapatillas Response Super 3.0 de Adidas son un calzado ideal para corredores que buscan un alto rendimiento y confort en sus entrenamientos. Diseñadas con una suela de goma resistente y antideslizante, estas zapatillas garantizan una excelente tracción en cualquier superficie. Además, su tecnología Boost proporciona una gran amortiguación y retorno de energía que impulsa a cada paso. La parte superior de malla transpirable brinda una mayor ventilación y reduce el exceso de sudor, mientras que el sistema de cordones permite un ajuste preciso y seguro.",
+    detail:"Las zapatillas Response Super 3.0 de Adidas son un calzado ideal para corredores que buscan un alto rendimiento y confort en sus entrenamientos. Diseñadas con una suela de goma resistente y antideslizante, estas zapatillas garantizan una excelente tracción en cualquier superficie.",
     price: 47899,
     imgUrl: "https://www.digitalsport.com.ar/files/products/640a48817319c-590496-500x500.jpg",
     published: true,
@@ -80,7 +80,7 @@ let zapatillas = [
     id: Date.now() + 4,
     name: "QUESTAR ADIDAS",
     description: "CALZADO ZAPATILLAS ADIDAS CORE SPORT PARA MUJER DE RUNNING",
-    detail:"Las zapatillas Questar de Adidas combinan una estética moderna y atractiva con funcionalidad y comodidad en el uso diario. La suela de goma de alta densidad brinda tracción y durabilidad, mientras que la tecnología OrthoLite en la plantilla proporciona una sensación de comodidad y sujeción suave. La parte superior de malla transpirable mejora la ventilación en el pie y contribuye a reducir la humedad interna, mientras que el sistema de cordones asegura una fijación precisa del pie.",
+    detail:"Las zapatillas Questar de Adidas combinan una estética moderna y atractiva con funcionalidad y comodidad en el uso diario. La suela de goma de alta densidad brinda tracción y durabilidad, mientras que la tecnología OrthoLite en la plantilla proporciona una sensación de comodidad y sujeción suave.",
     price: 39999,
     imgUrl: "https://www.digitalsport.com.ar/files/products/634dc37526284-574301-500x500.jpg",
     published: true,
@@ -90,7 +90,7 @@ let zapatillas = [
     id: Date.now() + 5,
     name: "MAGNUS FILA",
     description: "CALZADO ZAPATILLAS FILA CALZADO RUNNING CABALLERO PARA HOMBRE DE RUNNING",
-    detail:"Las zapatillas Magnus son unas zapatillas deportivas que ofrecen la comodidad y el soporte necesarios para cualquier actividad física. La suela exterior de caucho proporciona un agarre excelente y la entresuela de EVA brinda una amortiguación constante para una mayor comodidad. La parte superior de malla y cuero sintético permite la circulación del aire para mantener los pies frescos y el cierre de cordones asegura una fijación segura del pie.",
+    detail:"Las zapatillas Magnus son unas zapatillas deportivas que ofrecen la comodidad y el soporte necesarios para cualquier actividad física. La suela exterior de caucho proporciona un agarre excelente y la entresuela de EVA brinda una amortiguación constante para una mayor comodidad.",
     price: 19999,
     imgUrl: "https://www.digitalsport.com.ar/files/products/646f3ec93e826-610929-500x500.jpg",
     published: true,
@@ -100,7 +100,7 @@ let zapatillas = [
     id: Date.now() + 6,
     name: "RESEARCH FILA",
     description: "CALZADO ZAPATILLAS FILA CALZADO RUNNING DAMA PARA HOMBRE DE TRAINING Y FITNESS",
-    detail:"Las zapatillas Research Fila son resistentes y duraderas que ofrecen un gran soporte y protección durante cualquier actividad física. La suela de goma resistente ofrece una tracción superior, mientras que la entre-suela suave y confortable proporciona una sensación de amortiguación y una excelente recuperación de la energía. La parte superior de malla y cuero sintético permite que los pies respiren para una mayor ventilación.",
+    detail:"Las zapatillas Research Fila son resistentes y duraderas que ofrecen un gran soporte y protección durante cualquier actividad física. La suela de goma resistente ofrece una tracción superior, mientras que la entre-suela suave y confortable proporciona una sensación de amortiguación y una excelente recuperación de la energía.",
     price: 19299,
     imgUrl: "https://www.digitalsport.com.ar/files/products/646f3ed0ce495-610950-500x500.jpg",
     published: true,
@@ -128,17 +128,26 @@ let zapatillas = [
   }
 ]
 
+
+
+
 // CARGAR PORTADA
 const imgRow = document.getElementById('img-destacada');
 const productStar = JSON.parse(localStorage.getItem('productStar'));
 if(productStar !== null){
   imgRow.innerHTML = 
-        `<div class="col-12 col-sm-6 d-flex flex-column p-5">
+        `<div class="col-12 col-md-6 d-flex flex-column p-5">
             <h1>${productStar.name}</h1>
             <p>${productStar.description}</p>
-            <p>$${productStar.price}</p>
+            <h1>$${productStar.price}</h1>
+            <div class="col-12">
+            <a href="../pages/product_detail.html?id=${productStar.id}"
+            style="text-decoration: none; color:black;">
+            <button class="uk-button uk-button-default">VER MAS</button>
+            </a>           
+            </div>
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
             <img src="${productStar.imgUrl}" alt="">
         </div>`
 }

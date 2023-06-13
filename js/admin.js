@@ -80,7 +80,7 @@ function renderProductTable() {
             <td data-title="ID">${element.id}</td>
                 <td data-title="Nombre">${element.name}</td>
                 <td data-title="Categoria">${element.category}</td>
-                <td data-title="Descripcion">${element.description}</td>
+                <td data-title="Descripcion">${element.detail}</td>
                 <td data-title="Publicado">${published}</td>
                 <td data-title="Precio">$${element.price}</td>
                 <td data-title="Editar">

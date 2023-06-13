@@ -8,27 +8,20 @@ elementoFiltrado = elementoFiltrado[0];
 detail.innerHTML = detalleProducto();
 
 function detalleProducto() {
-    return `<div class = "contenedor-detalle-producto"> 
-    <div class="card mb-3 mx-auto" style="max-width: 1540px;">
-       <div class="row g-0">
-         <div class="col-md-4">
-           <img src="${elementoFiltrado.imgUrl}" class="img-fluid rounded-start" alt="..." id="imagen-producto-detalle">
-         </div>
-         <div class="col-md-8">
-           <div class="card-body ">
-             <h2 class="card-title">${elementoFiltrado.name}</h2>
-             <p class="card-text precio">$${elementoFiltrado.price}</p>
-             <p class="card-text"> 3 cuotas <strong>sin interés</strong> de $${elementoFiltrado.price / 3}</p>
-             <br><h3>Descripcion del producto</h3><br>
-             <p> ${elementoFiltrado.detail} </p>
-             <div class="d-grid gap-2 col-6 mx-auto">
-               <br>
-               <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#Carrito" type="button">
-               <a href="../pages/error404.html">AGREGAR AL CARRITO</a></button>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-     </div>`
+    return `
+    <div class="row d-flex justify-content-center align-items-center" style="margin: auto;">
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <img src="${elementoFiltrado.imgUrl}" alt="">
+                </div>
+                <div class="col-12 col-md-6 ps-5">
+                    <h1>${elementoFiltrado.name}</h1>
+                    <h3 style="font-weight: bold;">$${elementoFiltrado.price}</h3>
+                    <p>${elementoFiltrado.detail}</p>
+                    <p class="product-detail-p"><i class="fa-solid fa-truck me-2"></i>ENVIO GRATIS A PARTIR $29.999</p>
+                    <p class="product-detail-p"><i class="fa-solid fa-lock me-2"></i>¡PAGA HASTA 3 CUOTAS SIN INTERES!</p>
+                    <p class="product-detail-p"><i class="fa-solid fa-truck-ramp-box me-2"></i>DEVOLUCIONES GRATIS ¿NO ES TU TALLE? PODÉS DEVOLVERLO EN UN PLAZO DE 60 DÍAS</p>
+                    <a style="text-decoration: none; color:black; "href="../pages/error404.html">
+                    <button class="uk-button uk-button-default mt-4">AÑADIR AL CARRITO</button></a>
+                </div>
+            </div>`
 };

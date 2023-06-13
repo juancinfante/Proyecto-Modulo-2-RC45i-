@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
-
 
 .imagen-destacada img{
     width: 100%;
@@ -105,24 +106,45 @@ span:hover{
 }
 
 
-.container{
+/* .container{
     height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 30px;
     align-items: center;
     justify-content: center;
-}
+} */
 
 /*    FOOTER    */
 
-
-
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(10px) saturate(120%) !important;
-  -webkit-backdrop-filter: blur(10px) saturate(120%) !important;  
 }
+footer h4{
+  font-weight: bold;
+}
+footer ul a{
+  text-decoration: none;
+  color: black;
+}
+footer ul a:hover{
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+footer ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.terycon{
+  background-color: #282c31;
+  color: #fff;
+}
+.white{
+  color: white;
+}
+/* 
+
 
 .card-footer {
   display: flex;
@@ -155,8 +177,6 @@ footer a:hover {
   
 }
 
-
-
 .footer-input {
   width: 69%;
   padding: 5px 20px;
@@ -164,7 +184,7 @@ footer a:hover {
   border: solid 1px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
-}
+} */
 
 .imagen-footer{
   width: 150px;
@@ -183,4 +203,18 @@ footer a:hover {
     font-size: 15px;
     padding-left: 65px;
   }
+}
+
+/* PRODUCT DETAIL */
+
+.product-detail-p{
+  margin: 5px 0;
+  text-decoration: underline;
+  width: auto;
+  width: 400px;
+}
+.product-detail-p:hover{
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
 }

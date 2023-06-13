@@ -18,22 +18,27 @@
 <body>
     <div class="container-fluid p-0">
         <!-- NAVBAR UIKIT -->
-        <nav class="uk-navbar-container" uk-dropnav="mode: click">
+        <nav class="uk-navbar-container" uk-dropnav="mode: click" style="background-color: #2d3137;">
             <div class="container-fluid ps-4">
-                <div uk-navbar>
+                <div class="uk-navbar">
                     <div class="uk-navbar-left">
                         <ul class="uk-navbar-nav">
-                            <li class="uk-active"><a href="#"><img src="./img/LogoZapatillas2-removebg-preview.png" style="width: 90px;" alt=""></a></li>
-                            <li><a href="./pages/page-contact.html" class="d-none d-md-inline-flex">Contacto</a></li>
-                            <li><a href="./pages/error404.html" class="d-none d-md-inline-flex">Nosotros</a></li>
+                            <li class="uk-active"><a href="./index.html"><img
+                                        src="./img/LogoZapatillas2-removebg-preview.png" style="width: 90px;"
+                                        alt=""></a></li>
+                            <li><a href="./pages/page-contact.html"
+                                    class="d-none d-md-inline-flex text-white                                ">Contacto</a>
+                            </li>
+                            <li><a href="./pages/error404.html" class="d-none d-md-inline-flex text-white ">Nosotros</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="uk-navbar-right" id="navnone">
                         <ul class="uk-navbar-nav d-none d-md-inline-flex">
-                            <li><a href="./pages/error404.html">🛒<span class="uk-badge">0</span></a></li>
-                            <li id="admin-link"><a href="./pages/admin.html">Admin</a></li>
+                            <li><a uk-toggle="target: #offcanvas-carrito">🛒<span class="uk-badge">0</span></a></li>
+                            <li id="admin-link"><a href="./pages/admin.html" class="text-white ">Admin</a></li>
                             <li>
-                                <a href="#">Cuenta<span uk-drop-parent-icon></span></a>
+                                <a href="#" class="text-white ">Cuenta<span uk-drop-parent-icon></span></a>
                                 <div class="uk-dropdown">
                                     <ul class="uk-nav uk-dropdown-nav">
                                         <li id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR
@@ -47,15 +52,15 @@
                                 </div>
                             </li>
                         </ul>
-                        <a class="d-md-none" uk-navbar-toggle-icon type="button"
-                            uk-toggle="target: #offcanvas-nav-primary"></a>
+                        <i class="fa-solid fa-bars fa-xl d-md-none" uk-toggle="target: #offcanvas-nav-primary"
+                            style="color: #ffffff;"></i>
                         <div id="offcanvas-nav-primary" uk-offcanvas="flip: true">
                             <div class="uk-offcanvas-bar uk-flex uk-flex-column">
 
                                 <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
-                                    <li class="uk-active"><a href="#">TIENDA</a></li>
-                                    <li class="uk-parent"><a href="#">CONTACTO</a></li>
-                                    <li class="uk-parent"><a href="#">NOSOTROS</a></li>
+                                    <li class="uk-active"><a href="./index.html">TIENDA</a></li>
+                                    <li class="uk-parent"><a href="./pages/page-contact.html">CONTACTO</a></li>
+                                    <li class="uk-parent"><a href="./pages/error404.html">NOSOTROS</a></li>
                                     <li class="uk-parent" id="admin-link"><a href="./pages/admin.html">ADMIN</a></li>
                                     <li class="uk-parent" id="login-link" uk-toggle="target: #modal-example"><a
                                             href="#">INICIAR SESION</a></li>
@@ -74,19 +79,31 @@
 
         <!-- PORTADA DESCATADA -->
         <div class="row d-flex align-items-center" id="img-destacada" style="margin: auto">
-            <div class="col-12 col-sm-6 d-flex flex-column p-5">
-                <h1>ZOOMX INVINCIBLE RUN FLYKNIT NIKE</h1>
-                <p>Lleva tus carreras al límite. El Nike ZoomX Invincible Run Flyknit 2 es súper suave y te permite
-                    desarrollar tu potencial cuando tus pies golpean el pavimento.</p>
-                <p>$99999</p>
+            <div class="col-12 col-md-6 d-flex flex-column p-5">
+                <h1>RESPONSE SUPER 3.0 ADIDAS</h1>
+                <p>Las zapatillas Response Super 3.0 de Adidas son un calzado ideal para corredores que buscan un alto rendimiento y confort en sus entrenamientos. Diseñadas con una suela de goma resistente y antideslizante, estas zapatillas garantizan una excelente tracción en cualquier superficie.</p>
+                <h1>$47.899</h1>
+                <a href="../pages/product_detail.html?id=1686685868577" style="text-decoration: none; color:black;">
+                    <button class="uk-button uk-button-default">VER MAS</button>
+                </a>
             </div>
-            <div class="col-12 col-sm-6">
-                <img src="https://www.digitalsport.com.ar/files/products/641aa63a883ca-570039-500x500.jpg" alt="">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <img src="https://www.digitalsport.com.ar/files/products/640a48817319c-590496-500x500.jpg" alt="">
             </div>
         </div>
 
 
+        <!-- MODAL CARRITO -->
 
+        <div id="offcanvas-carrito" uk-offcanvas="flip: true; overlay: true">
+            <div class="uk-offcanvas-bar">
+        
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+        
+                <h3>MI CARRITO</h3>
+                <div class="col-12" id="carrito"></div>
+            </div>
+        </div>
 
         <!-- MODAL LOGIN -->
         <div id="modal-example" uk-modal>
@@ -145,7 +162,6 @@
             </div>
         </div>
 
-        <!-- -->
 
         <!-- PUBLICIDAD MARCAS -->
         <div class="row m-0">
@@ -203,6 +219,7 @@
             </ul>
         </nav>
 
+        <!-- PRODUCTOS  -->
         <div class="container-fluid">
             <div class="row mt-5" id="zapasTable">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
@@ -327,129 +344,88 @@
                 </div>
             </div>
         </div>
+
     </div>
 
+    <div class="col-12 d-flex justify-content-center pt-5 pb-4" style="background-color: #ede734;">
+        <h3 m-0 class="text-center"><strong>UNITE AL CLUB Y CONSEGUÍ UN 15% DE DESCUENTO </strong><a href=""
+                class="text-black" uk-toggle="target: #modal-example2">REGISTRATE AQUI <i
+                    class="fa-solid fa-arrow-right"></i></a></h3>
+    </div>
+    <div class="col-12 d-flex flex-column text-center justify-content-center pt-5 pb-4"
+        style="background-color: #ff0000">
+        <h3 class="text-white">✨DESCUENTOS PARA VOS✨</h3>
+        <p class="m-0 text-white">Llevate 20% off en el catálogo seleccionado al comprar más de $19,999.</p>
+        <a href="" class="text-white">COMPRA AHORA</a>
+    </div>
 
-    <!-- //////////////////       FOOTER   ////////////////////////////////////////////// -->
+    <!-- FOOTER -->
 
+    <footer class="container-fluid">
+        <div class="row ps-md-5 pb-5 text-center text-sm-left">
+            <div class="col-12 col-md-3 mt-5">
+                <h4>REDES SOCIALES</h4>
+                <ul>
+                    <li><i class="fa-brands fa-instagram pe-2"></i><a href="./pages/error404.html">texder</a></li>
+                    <li><i class="fa-brands fa-facebook pe-2"></i><a href="./pages/error404.html">texder</a></li>
+                    <li><i class="fa-brands fa-twitter pe-2"></i><a href="./pages/error404.html">texder</a></li>
 
-    <footer class="container-fluid text-white ">
-        <div class="row">
-            <!--///////////////////////////    SECTION 1   /////////////////////////////////////////  -->
-            <div class="col-12 col-md-4 d-flex justify-content-center">
-                <div>
-                    <div class="">
-                        <h6 class="pt-3  font-footer fs-5 text-white">Redes sociales: </h6>
-                    </div>
-                    <br>
-                    <div class="ps-5 d-flex justify-content-end flex-column font-responsive">
-                        <div>
-                            <img src="./img/icono_instagram-removebg-preview.png"
-                                class="icons-footer"> <a class="font-footer" href="https://www.facebook.com/"
-                                target="_blank">Siguenos en Facebook</a>
-                        </div>
-                        <br>
-                        <div>
-                            <img src="./img/icono_instagram-removebg-preview.png"
-                                class="icons-footer" alt="">
-                            <a class="font-footer " href="https://www.instagram.com" target="_blank">Siguenos en
-                                Instagram</a>
-                        </div>
-                        <br>
-                        <div>
-                            <img src="./img/icono_twiter-removebg-preview.png"
-                                class="icons-footer">
-                            <a class="font-footer " href="https://twitter.com" target="_blank">Siguenos en Twitter</a>
-                        </div>
-                        <br>
-                        <div>
-                            <img src="./img/icono_whatsapp-removebg-preview.png"
-                                class="icons-footer">
-                            <a class="font-footer " href="https://wa.link/q0dmh4" target="_blank">Siguenos en
-                                Whatsapp</a>
-                        </div>
-
-                    </div>
-                    <div>
-                        <div class="">
-                            <h6 class=" font-footer fs-5 footer-title-dos"></h6>
-                        </div>
-                    </div>
-                </div>
+                </ul>
             </div>
-            <!--////////////////////////////     SECTION 2   ///////////////////////////////////////////  -->
-            <div class="col-12 col-md-4 d-flex flex-column">
-                <div class="pb-2 pt-2 d-flex justify-content-center">
-                    <div class="pt-3">
-                        <img src="./img/LogoZapatillas2-removebg-preview.png"
-                            class="card-footer imagen-footer" alt="qsdqd" />
-                    </div>
-
-
-                </div>
-                <div class="d-flex justify-content-center pb-3 font-footer text-white pe-2"></div>
-
+            <div class="col-12 col-md-3 mt-5">
+                <h4>PRODUCTOS</h4>
+                <ul>
+                    <li><a href="./pages/error404.html">Calzado</a></li>
+                    <li><a href="./pages/error404.html">Ropa</a></li>
+                    <li><a href="./pages/error404.html">Accesorios</a></li>
+                    <li><a href="./pages/error404.html">Botines</a></li>
+                    <li><a href="./pages/error404.html">Rompevientos</a></li>
+                    <li><a href="./pages/error404.html">Conjuntos</a></li>
+                    <li><a href="./pages/error404.html">Ojotas</a></li>
+                </ul>
             </div>
-
-            <!-- ///////////////////////////////// SECTION 3   ////////////////////////////////////////// -->
-
-
-            <div class="col-12 col-md-4 border-1 border-light ">
-                <div class="pt-3 pe-5 footer-title-dos ">
-                    <h4 class="font-footer d-flex  text-white">Información de contacto:</h4>
-                    <br>
-                    <div class="row d-flex">
-                        <section class="ms-1 fa-solid fa-house icons-footer col-1" style="color: #ffffff;"> </section>
-                        <div class="col-1"></div>
-                        <div class="col-8"> San miguel de Tucumán, Tucumán, Argentina.</div>
-                    </div>
-                    <br>
-                    <div class="row d-flex">
-                        <section class="ms-1 fa-solid fa-envelope icons-footer col-1" style="color: #ffffff;">
-                        </section>
-                        <div class="col-1"></div>
-                        <div class="col-8"> correoelectronico@correo.com.ar</div>
-
-
-
-                        <br> <br> <br>
-                        <div class="row d-flex">
-                            <section class="ms-1 fa-solid fa-mobile-screen icons-footer col-1" style="color: #ffffff;">
-                            </section>
-                            <div class="col-1"></div>
-                            <div class="col-8"> +549 888 456123</div>
-
-                        </div>
-
-                    </div>
-
-                    <br>
-                    <div class="ms-4 "> suscribete:</div>
-                    <form class="footer-title-dos ps-4 ms-1">
-                        <div class=" d-flex justify-content-center pe-5 ps-0"> <input type="email"
-                                class="footer-input pe-5" placeholder="ejemplo@correo.com" minlength="10" maxlength="50"
-                                required> <input type="submit" class="btn btn-outline-light "></div>
-
-                </div>
-                </form>
+            <div class="col-12 col-md-3 mt-5">
+                <h4>ASISTENCIA</h4>
+                <ul>
+                    <li><a href="./pages/error404.html">Dudas Frecuentes</a></li>
+                    <li><a href="./pages/error404.html">Realizar Pedidos</a></li>
+                    <li><a href="./pages/error404.html">Productos adidas</a></li>
+                    <li><a href="./pages/error404.html">Pago</a></li>
+                    <li><a href="./pages/error404.html">Envio</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-3 mt-5">
+                <h4>EMPRESA</h4>
+                <ul>
+                    <li><a href="./pages/error404.html">Acerca de nosotros</a></li>
+                    <li><a href="./pages/error404.html">Trabaja en Texder</a></li>
+                    <li><a href="./pages/error404.html">Prensa</a></li>
+                    <li><a href="./pages/error404.html">Informacion corporativa</a></li>
+                </ul>
             </div>
         </div>
-        <!--  /////////////////////////////////////////////////////////////////////////////////// -->
+        <div class="row terycon p-2">
+            <div class="col-12 pb-2">
+                <ul class="text-center d-md-flex justify-content-center">
+                    <li class="me-3"><a href="" class="white">Cookies</a></li>
+                    <li class="me-3"><a href="" class="white">Nuestros Datos</a></li>
+                    <li class="me-3"><a href="" class="white">Terminos y condiciones</a></li>
+                    <li class="me-3"><a href="" class="white">Politica de privacidad</a></li>
+                    <li class="me-3"><a href="" class="white">Reclamos</a></li>
+                </ul>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <p class="p-0 m-0">© 2023 Texder Argentina</p>
+            </div>
+        </div>
     </footer>
-    <div class="row bg-black text-white p-2 font-footer">
 
-        <div class="col col-8"> © copyright | Año 2023 </div>
-
-        <div class="col"><a href="/error">Terminos y condiciones</a></div>
-
-    </div>
 
     <script src="./js/index.js"></script>
     <script src="./js/navcheck.js"></script>
     <script src="./js/login.js"></script>
     <script src="./js/register.js"></script>
     <script src="./js/logout.js"></script>
-    <script src="./js/product_detail_id.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
@@ -460,6 +436,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit-icons.min.js"></script>
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/472eb7a910.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
