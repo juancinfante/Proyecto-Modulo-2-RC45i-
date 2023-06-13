@@ -1,96 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style-about-us.css">
+  <link rel="stylesheet" href="/style-about-us.css">
+  <link rel="stylesheet" href="../css/stylos.css">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/css/uikit.min.css" />
 </head>
+
 <body>
-    <div class="container mb-3">
-      <br>
-        <div class=" mb-lg-5">
-          <h1 class="fw-bold ms-5">Nosotros</h2>
-          <div class="row">
-                    <div class="col m-5 ">
-                      <div>
-                        <h3 class="fw-bold">Tenemos una meta: <span class="text-primary">¡brindarte la mejor selección de zapatillas para que encuentres tu estilo perfecto!</span></h3>
-                        <h5 class="text-dark-emphasis">Apasionados por la tecnología y obsesionados con las zapatillas más innovadoras, nos propusimos crear nuestra tienda online.</h5>
-                        <h5 class="text-primary-emphasis">Con esta idea en mente nos propusimos crear Texder una plataforma con una amplia selección de calzado de vanguardia que combina estilo y funcionalidad.</h5>
-                    </div>
-                    </div>
-                    <div class="col">
-                      <img src="https://st2.depositphotos.com/2251265/10690/i/450/depositphotos_106900274-stock-photo-coworking-process-designers-team-work.jpg" class="img-fluid rounded-3" alt="imagen de equipo trabajando en proyecto">
-                    </div>
-                </div>
-        </div>
-        
-      
-        <div class="row mb-lg-5">
-          <div class="col d-flex align-items-center justify-content-center">
-              <img src="https://actuasolutions.com/wp-content/uploads/2021/05/Quienes-somos-05.png" class="img-fluid" alt="imagen de seccion quienes somos">
-          </div>
-          <div class="col d-flex align-items-center justify-content-center m-5">
-            <div>
-              <h5 class="fw-bold">¿Quiénes somos?</h5>
-              <br>
-           <h6 class="text-dark-emphasis">Somos una tienda de zapatillas en línea especializada en ofrecer una amplia selección de calzado deportivo y urbano de alta calidad. Nos apasiona el mundo de las zapatillas y nos enorgullece brindar a nuestros clientes una experiencia de compra excepcional. <br> <span class="text-primary-emphasis" >Únete a nuestra comunidad de amantes de las zapatillas y descubre una amplia gama de opciones para llevar tus pasos al siguiente nivel. ¡Explora nuestra tienda y encuentra tus zapatillas ideales con nosotros!</span></h6>
-          </div>
-          </div>
-        </div>
+  <div class="container-fluid p-0" style="margin: auto;">
 
-        <section>
-            <div class="row">
-              <h1 class="text-center fw-bold">Nuestro Equipo</h1>
-              <h5 class="text-dark-emphasis">Nuestro equipo de trabajo está compuesto por expertos en diseño web, desarrollo y marketing digital.  <br> <span class="text-primary-emphasis">Con nuestra pasión por la innovación y el compromiso con la excelencia, estamos listos para llevar tu presencia en la web al siguiente nivel.</span> </h5>       
-            </div>
-            <br>
-            <div class="row g-4">
-                <div class="col-12 col-md-6 col-lg-3">
-                  <div class="card card-about-us h-100">
-                    <img src="" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                  <div class="card card-about-us h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a short card.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                  <div class="card card-about-us h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                  <div class="card card-about-us h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                  </div>
-                </div>
+    <!-- NAVBAR UIKIT -->
+    <nav class="uk-navbar-container" uk-dropnav="mode: click" style="background-color: #2d3137;">
+      <div class="container-fluid ps-4">
+          <div class="uk-navbar">
+              <div class="uk-navbar-left">
+                  <ul class="uk-navbar-nav">
+                      <li class="uk-active"><a href="../index.html"><img
+                                  src="../img/LogoZapatillas2-removebg-preview.png" style="width: 90px;"
+                                  alt=""></a></li>
+                      <li><a href="../pages/page-contact.html"
+                              class="d-none d-md-inline-flex text-white                                ">Contacto</a>
+                      </li>
+                      <li><a href="../pages/about-us.html" class="d-none d-md-inline-flex text-white ">Nosotros</a>
+                      </li>
+                  </ul>
               </div>
-        </section>
+              <div class="uk-navbar-right" id="navnone">
+                  <ul class="uk-navbar-nav d-none d-md-inline-flex">
+                      <li class="carrito"><a uk-toggle="target: #offcanvas-carrito">🛒<span class="uk-badge">0</span></a></li>
+                      <li id="admin-link"><a href="../pages/admin.html" class="text-white ">Admin</a></li>
+                      <li>
+                          <a href="#" class="text-white ">Cuenta<span uk-drop-parent-icon></span></a>
+                          <div class="uk-dropdown">
+                              <ul class="uk-nav uk-dropdown-nav">
+                                  <li id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR
+                                          SESION</a></li>
+                                  <li id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">CREAR
+                                          CUENTA</a></li>
+                                  <li class="nav-item" id="logout-link">
+                                      <a class="nav-link" onclick="logout()">Salir</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </li>
+                  </ul>
+                  <i class="fa-solid fa-bars fa-xl d-md-none" uk-toggle="target: #offcanvas-nav-primary"
+                      style="color: #ffffff;"></i>
+                  <div id="offcanvas-nav-primary" uk-offcanvas="flip: true">
+                      <div class="uk-offcanvas-bar uk-flex uk-flex-column">
 
+                          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                              <li class="uk-active"><a href="../index.html">TIENDA</a></li>
+                              <li class="uk-parent"><a href="../pages/page-contact.html">CONTACTO</a></li>
+                              <li class="uk-parent"><a href="../pages/about-us.html">NOSOTROS</a></li>
+                              <li class="uk-parent" id="admin-link"><a href="../pages/admin.html">ADMIN</a></li>
+                              <li class="uk-parent" id="login-link" uk-toggle="target: #modal-example"><a
+                                      href="#">INICIAR SESION</a></li>
+                              <li class="uk-parent" id="registrar-link" uk-toggle="target: #modal-example2"><a
+                                      href="#">REGISTRARSE</a></li>
+                              <li class="uk-parent" id="logout-link"><a href="#" onclick="logout()">CERRAR
+                                      SESION</a></li>
+                          </ul>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </nav>
+
+
+      <div class="row border-bottom" style="padding: 0 0 40px 0; margin: 0;" >
+        <div class="col-12 col-md-6 p-3 mt-5 text-center flex-column justify-content-center">
+              <h1 class="fw-bold ms-5">Nosotros</h2>
+              <h3 class="fw-bold">Tenemos una meta: <span class="text-primary">¡brindarte la mejor selección de
+                  zapatillas para que encuentres tu estilo perfecto!</span></h3>
+              <h5 class="text-dark-emphasis">Apasionados por la tecnología y obsesionados con las zapatillas más
+                innovadoras, nos propusimos crear nuestra tienda online.</h5>
+              <h5 class="text-primary-emphasis">Con esta idea en mente nos propusimos crear Texder una plataforma con
+                una amplia selección de calzado de vanguardia que combina estilo y funcionalidad.</h5>
+          </div>
+          <div class="col-12 col-md-6 p-0 mt-5 d-flex justify-content-center">
+            <img
+              src="https://st2.depositphotos.com/2251265/10690/i/450/depositphotos_106900274-stock-photo-coworking-process-designers-team-work.jpg"
+              class="img-fluid rounded-3" alt="imagen de equipo trabajando en proyecto">
+          </div>
+      </div>
+
+
+    <div class="row m-0 border-bottom pb-5">
+      <div class="col-12 col-md-6 text-center mt-5">
+          <h1 class="fw-bold">¿Quiénes somos?</h1>
+          <h6 class="text-dark-emphasis">Somos una tienda de zapatillas en línea especializada en ofrecer una amplia
+            selección de calzado deportivo y urbano de alta calidad. Nos apasiona el mundo de las zapatillas y nos
+            enorgullece brindar a nuestros clientes una experiencia de compra excepcional. <br> <span
+              class="text-primary-emphasis">Únete a nuestra comunidad de amantes de las zapatillas y descubre una amplia
+              gama de opciones para llevar tus pasos al siguiente nivel. ¡Explora nuestra tienda y encuentra tus
+              zapatillas ideales con nosotros!</span></h6>
+      </div>
+      <div class="col-12 col-md-6 mt-5 d-flex align-items-center">
+        <img src="https://actuasolutions.com/wp-content/uploads/2021/05/Quienes-somos-05.png" class="img-fluid"
+          alt="imagen de seccion quienes somos">
+      </div>
+    </div>
+
+    <!-- SECCION NOSOTROS -->
+    <section class="mb-5 pt-5">
+      <div class="row m-0">
+        <div class="col-12 text-center">
+          <h1 class="fw-bold">Nuestro Equipo</h1>
+          <h5 class="text-dark-emphasis">Nuestro equipo de trabajo está compuesto por expertos en diseño web, desarrollo y
+            marketing digital. <br> <span class="text-primary-emphasis">Con nuestra pasión por la innovación y el
+              compromiso con la excelencia, estamos listos para llevar tu presencia en la web al siguiente nivel.</span>
+          </h5>
         </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="https://trello.com/1/cards/647389ccade52a08ffb2b40d/attachments/6488cf276aed80f1a705f708/download/nelson_foto_de_frente.png" alt="" class="rounded-circle">
+          <h3>Nelson Robles</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="https://trello.com/1/cards/647389ccade52a08ffb2b40d/attachments/6488b27fe174aad6d6967683/download/foto-card.jpg" alt="" class="rounded-circle">
+          <h3>Abril Farfan</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="https://trello.com/1/cards/647389ccade52a08ffb2b40d/attachments/6488b0c40da3633ada480376/download/p1.jpg" alt="" class="rounded-circle">
+          <h3>Juan Cruz Infante</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="https://ca.slack-edge.com/THQU1MGPN-U04DQGBAD5M-e2d116c1e952-512" alt="" class="rounded-circle">
+          <h3>Nicolas Chia</h3>
+        </div>
+      </div>
+      
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    <!-- FOOTER -->
+
+    <footer class="container-fluid border-top mt-5">
+      <div class="row ps-md-5 pb-5 text-center text-sm-left">
+          <div class="col-12 col-md-3 mt-5">
+              <h4>REDES SOCIALES</h4>
+              <ul>
+                  <li><i class="fa-brands fa-instagram pe-2"></i><a href="./pages/error404.html">texder</a></li>
+                  <li><i class="fa-brands fa-facebook pe-2"></i><a href="./pages/error404.html">texder</a></li>
+                  <li><i class="fa-brands fa-twitter pe-2"></i><a href="./pages/error404.html">texder</a></li>
+
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>PRODUCTOS</h4>
+              <ul>
+                  <li><a href="./pages/error404.html">Calzado</a></li>
+                  <li><a href="./pages/error404.html">Ropa</a></li>
+                  <li><a href="./pages/error404.html">Accesorios</a></li>
+                  <li><a href="./pages/error404.html">Botines</a></li>
+                  <li><a href="./pages/error404.html">Rompevientos</a></li>
+                  <li><a href="./pages/error404.html">Conjuntos</a></li>
+                  <li><a href="./pages/error404.html">Ojotas</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>ASISTENCIA</h4>
+              <ul>
+                  <li><a href="./pages/error404.html">Dudas Frecuentes</a></li>
+                  <li><a href="./pages/error404.html">Realizar Pedidos</a></li>
+                  <li><a href="./pages/error404.html">Productos adidas</a></li>
+                  <li><a href="./pages/error404.html">Pago</a></li>
+                  <li><a href="./pages/error404.html">Envio</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>EMPRESA</h4>
+              <ul>
+                  <li><a href="./pages/error404.html">Acerca de nosotros</a></li>
+                  <li><a href="./pages/error404.html">Trabaja en Texder</a></li>
+                  <li><a href="./pages/error404.html">Prensa</a></li>
+                  <li><a href="./pages/error404.html">Informacion corporativa</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="row terycon p-2">
+          <div class="col-12 pb-2">
+              <ul class="text-center d-md-flex justify-content-center">
+                  <li class="me-3"><a href="" class="white">Cookies</a></li>
+                  <li class="me-3"><a href="" class="white">Nuestros Datos</a></li>
+                  <li class="me-3"><a href="" class="white">Terminos y condiciones</a></li>
+                  <li class="me-3"><a href="" class="white">Politica de privacidad</a></li>
+                  <li class="me-3"><a href="" class="white">Reclamos</a></li>
+              </ul>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+              <p class="p-0 m-0">© 2023 Texder Argentina</p>
+          </div>
+      </div>
+  </footer>
+
+  </div>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/navcheck.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="./js/register.js"></script>
+  <script src="./js/logout.js"></script>
+  <script src="./js/carrito.js"></script>
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
+  <!-- SWEET ALERT -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit-icons.min.js"></script>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/472eb7a910.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

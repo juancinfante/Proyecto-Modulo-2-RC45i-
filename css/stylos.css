@@ -117,8 +117,6 @@ span:hover{
 
 /*    FOOTER    */
 
-footer {
-}
 footer h4{
   font-weight: bold;
 }
@@ -143,66 +141,9 @@ footer ul{
 .white{
   color: white;
 }
-/* 
 
-
-.card-footer {
-  display: flex;
-  width: 100px;
-  height: 100px;
-}
-
-footer a {
-  color: white;
-  text-decoration: none;
-}
-footer i:hover {
-  color: rgba(0, 240, 0, 0.61);
-  font-size: 120%;
-  transition: 0.3s;
-}
-footer a:hover {
-  color: rgba(0, 240, 0, 0.61);
-  font-size: 90%;
-  transition: 0.1s;
-}
-
-.font-footer {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.icons-footer{
-  width: 40px;
-  font-size: 25px;
-  
-}
-
-.footer-input {
-  width: 69%;
-  padding: 5px 20px;
-  box-sizing: border-box;
-  border: solid 1px;
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255);
-} */
-
-.imagen-footer{
-  width: 150px;
-  height: 120px;
-}
-
-@media screen and (max-width: 480px) {
-  .footer-title {
-    padding-left: 45px;
-  }
-
-  .footer-title-dos {
-    margin: 10px;
-  }
-  .font-responsive {
-    font-size: 15px;
-    padding-left: 65px;
-  }
+.fa-bars:hover{
+  cursor: pointer;
 }
 
 /* PRODUCT DETAIL */
