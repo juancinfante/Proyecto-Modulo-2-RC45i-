@@ -1,0 +1,7 @@
+.card-about-us {
+    transition: transform 0.3s ease;
+  }
+
+  .card-about-us:hover {
+    transform: scale(1.05);
+  }
