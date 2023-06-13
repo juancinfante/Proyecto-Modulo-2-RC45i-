@@ -1,10 +1,10 @@
 // CARGAR CARRITO
 let carritoLS = JSON.parse(localStorage.getItem("carrito"));
 let carritoTable = document.getElementById("carrito");
-let totalPrice = carritoLS.reduce((accumulator, product) => accumulator + product.price, 0);
 
 function renderizarCarrito(){
-    if(carritoLS !== null){
+    if(carritoLS !== null && carritoLS.length !== 0){
+        let totalPrice = carritoLS.reduce((accumulator, product) => accumulator + product.price, 0);
         carritoTable.innerHTML =""
       carritoLS.forEach(element => {
         carritoTable.innerHTML += 
@@ -19,7 +19,7 @@ function renderizarCarrito(){
       carritoTable.innerHTML += 
       `<p>TOTAL: $${totalPrice}</p>
       <button onclick="comprar()">COMPRAR</button>`
-    }else if(carritoLS.lenght == 0){
+    }else{
         carritoTable.innerHTML += 
         `<div class="product-carrito d-flex justify-content-center align-items-center">
             <p>Carrito Vacio</p>
