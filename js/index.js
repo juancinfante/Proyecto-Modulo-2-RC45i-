@@ -129,8 +129,6 @@ let zapatillas = [
 ]
 
 
-
-
 // CARGAR PORTADA
 const imgRow = document.getElementById('img-destacada');
 const productStar = JSON.parse(localStorage.getItem('productStar'));
