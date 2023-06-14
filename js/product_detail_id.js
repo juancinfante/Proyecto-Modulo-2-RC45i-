@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const paramId= urlParams.get("id");
 const objeto = JSON.parse(localStorage.getItem("zapatillas"));
 
+
 let elementoFiltrado = objeto.filter(producto => producto.id == paramId);
 elementoFiltrado = elementoFiltrado[0];
 detail.innerHTML = detalleProducto();
@@ -35,6 +36,10 @@ function addCarrito(){
             price: elementoFiltrado.price,
             id: elementoFiltrado.id
         })
+        swal("🛒✅", "Producto agregado!", "success");
+        setTimeout(function() {
+            location.reload()
+          }, 1500);
         localStorage.setItem("carrito",JSON.stringify(carrito))
     }else{
         let carrito = []
@@ -44,7 +49,13 @@ function addCarrito(){
             price: elementoFiltrado.price,
             id: elementoFiltrado.id
         })
+        renderizarCarrito()
+        swal("🛒✅", "Producto agregado!", "success");
+        setTimeout(function() {
+            location.reload()
+          }, 1500);
         localStorage.setItem("carrito",JSON.stringify(carrito))
     }
     
 }
+

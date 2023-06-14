@@ -63,7 +63,7 @@ span:hover{
     cursor: pointer;
 }
 
-@media (min-width: 775){
+@media (min-width: 775px){
     .navnone{
         display: block;
     }
@@ -158,4 +158,14 @@ footer ul{
   background-color: #000;
   color: #fff;
   cursor: pointer;
+}
+
+.hover:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 460px){
+    .texderclub{
+        font-size: 12px;
+    }
 }

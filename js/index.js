@@ -67,7 +67,7 @@ let zapatillas = [
     category: "Nike"
   },
   {
-    id: Date.now() + 3,
+    id: 1686685868577,
     name: "RESPONSE SUPER 3.0 ADIDAS",
     description: "CALZADO ZAPATILLAS ADIDAS RUNNING RESPONSE PARA HOMBRE DE RUNNING",
     detail:"Las zapatillas Response Super 3.0 de Adidas son un calzado ideal para corredores que buscan un alto rendimiento y confort en sus entrenamientos. Diseñadas con una suela de goma resistente y antideslizante, estas zapatillas garantizan una excelente tracción en cualquier superficie.",
@@ -349,4 +349,3 @@ function orderMen() {
   }
 
 }
-

@@ -21,13 +21,13 @@ loginForm.addEventListener('submit', (evt) => {
                     evt.target.elements.username.value = "";
                   break;
                   case "admin":
-                      swal("Listo!", "Logueado con exito!", "success");
+                      swal("Listo!", "Bienvenido "+evt.target.elements.username.value+", logueado con exito!", "success");
                       setTimeout(function() {
                         window.location.href = "../index.html"
                       }, 2000);
                       localStorage.setItem('currentUser',JSON.stringify(usuariosLocalStorage[index]))
                   case "aprobado":
-                      swal("Listo!", "Logueado con exito!", "success");
+                    swal("Listo!", "Bienvenido "+evt.target.elements.username.value+" Logueado con exito!", "success");
                       localStorage.setItem('currentUser',JSON.stringify(usuariosLocalStorage[index]))
                       setTimeout(function() {
                             window.location.href = "../index.html"
