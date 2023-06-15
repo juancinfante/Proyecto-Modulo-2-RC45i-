@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEXDER</title>
+  <link rel="icon" href="../img/LogoZapatillas2-removebg-preview.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/stylos.css">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/css/uikit.min.css" />
+</head>
+
+<body>
+  <div class="container-fluid p-0" style="margin: auto;">
+
+    <!-- NAVBAR UIKIT -->
+    <nav class="uk-navbar-container" uk-dropnav="mode: click" style="background-color: #2d3137;">
+      <div class="container-fluid ps-4">
+          <div class="uk-navbar">
+              <div class="uk-navbar-left">
+                  <ul class="uk-navbar-nav">
+                      <li class="uk-active"><a href="../index.html"><img
+                                  src="../img/LogoZapatillas2-removebg-preview.png" style="width: 90px;"
+                                  alt=""></a></li>
+                      <li><a href="../pages/page-contact.html"
+                              class="d-none d-md-inline-flex text-white                                ">Contacto</a>
+                      </li>
+                      <li><a href="../pages/about-us.html" class="d-none d-md-inline-flex text-white ">Nosotros</a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="uk-navbar-right" id="navnone">
+                  <li style="list-style: none;" class="carrito"><a uk-toggle="target: #offcanvas-carrito">🛒<span id="contadorCarrito" class="uk-badge">0</span></a></li>
+                  <ul class="uk-navbar-nav d-none d-md-inline-flex">
+                      <li id="admin-link"><a href="../pages/admin.html" class="text-white ">Admin</a></li>
+                      <li>
+                          <a href="#" class="text-white ">Cuenta<span uk-drop-parent-icon></span></a>
+                          <div class="uk-dropdown">
+                              <ul class="uk-nav uk-dropdown-nav">
+                                  <li id="login-link" uk-toggle="target: #modal-example"><a href="#">INICIAR
+                                          SESION</a></li>
+                                  <li id="registrar-link" uk-toggle="target: #modal-example2"><a href="#">CREAR
+                                          CUENTA</a></li>
+                                  <li class="nav-item" id="logout-link">
+                                      <a class="nav-link" onclick="logout()">Salir</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </li>
+                  </ul>
+                  <i class="fa-solid fa-bars fa-xl d-md-none" uk-toggle="target: #offcanvas-nav-primary"
+                      style="color: #ffffff;"></i>
+                  <div id="offcanvas-nav-primary" uk-offcanvas="flip: true">
+                      <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+                          <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                              <li class="uk-active"><a href="../index.html">TIENDA</a></li>
+                              <li class="uk-parent"><a href="../pages/page-contact.html">CONTACTO</a></li>
+                              <li class="uk-parent"><a href="../pages/about-us.html">NOSOTROS</a></li>
+                              <li class="uk-parent" id="admin-link"><a href="../pages/admin.html">ADMIN</a></li>
+                              <li class="uk-parent" id="login-link" uk-toggle="target: #modal-example"><a
+                                      href="#">INICIAR SESION</a></li>
+                              <li class="uk-parent" id="registrar-link" uk-toggle="target: #modal-example2"><a
+                                      href="#">REGISTRARSE</a></li>
+                              <li class="uk-parent" id="logout-link"><a href="#" onclick="logout()">CERRAR
+                                      SESION</a></li>
+                          </ul>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </nav>
+
+
+    <!-- MODAL LOGIN -->
+    <div id="modal-example" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">LOGIN</h2>
+          <form class="uk-form-stacked" id="login-form">
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Usuario</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" type="text" name="username" required>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" type="password" name="password" required>
+                  </div>
+              </div>
+              <button class="uk-button uk-button-default uk-modal-close" type="button">CANCELAR</button>
+              <button class="uk-button uk-button-primary" type="submit">Login</button>
+          </form>
+          </p>
+      </div>
+  </div>
+
+
+  <!-- MODAL REGISTRO -->
+
+  <div id="modal-example2" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Registro</h2>
+          <form class="uk-form-stacked" id="register-form">
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Usuario</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" type="text" name="username" minlength="6" maxlength="12" required>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Email</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" type="email" name="email" required>
+                  </div>
+              </div>
+              <div class="uk-margin">
+                  <label class="uk-form-label" for="form-stacked-text">Contraseña</label>
+                  <div class="uk-form-controls">
+                      <input class="uk-input" type="password" name="password" minlength="6" maxlength="12"
+                          required>
+                  </div>
+              </div>
+              <button class="uk-button uk-button-default uk-modal-close" type="button">CANCELAR</button>
+              <button class="uk-button uk-button-primary" type="submit">Registrar</button>
+          </form>
+          </p>
+      </div>
+  </div>
+
+      <div class="row border-bottom" style="padding: 0 0 40px 0; margin: 0;" >
+        <div class="col-12 col-md-6 p-3 mt-5 text-center flex-column justify-content-center">
+              <h1 class="fw-bold ms-5">Nosotros</h2>
+              <h3 class="fw-bold">Tenemos una meta: <span class="text-primary">¡brindarte la mejor selección de
+                  zapatillas para que encuentres tu estilo perfecto!</span></h3>
+              <h5 class="text-dark-emphasis">Apasionados por la tecnología y obsesionados con las zapatillas más
+                innovadoras, nos propusimos crear nuestra tienda online.</h5>
+              <h5 class="text-primary-emphasis">Con esta idea en mente nos propusimos crear Texder una plataforma con
+                una amplia selección de calzado de vanguardia que combina estilo y funcionalidad.</h5>
+          </div>
+          <div class="col-12 col-md-6 p-0 mt-5 d-flex justify-content-center">
+            <img
+              src="https://st2.depositphotos.com/2251265/10690/i/450/depositphotos_106900274-stock-photo-coworking-process-designers-team-work.jpg"
+              class="img-fluid rounded-3" alt="imagen de equipo trabajando en proyecto">
+          </div>
+      </div>
+
+      <!-- MODAL CARRITO -->
+
+      <div id="offcanvas-carrito" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar">
+    
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+    
+            <h3>MI CARRITO</h3>
+            <div class="col-12" id="carrito">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row m-0 border-bottom pb-5">
+      <div class="col-12 col-md-6 text-center mt-5">
+          <h1 class="fw-bold">¿Quiénes somos?</h1>
+          <h6 class="text-dark-emphasis">Somos una tienda de zapatillas en línea especializada en ofrecer una amplia
+            selección de calzado deportivo y urbano de alta calidad. Nos apasiona el mundo de las zapatillas y nos
+            enorgullece brindar a nuestros clientes una experiencia de compra excepcional. <br> <span
+              class="text-primary-emphasis">Únete a nuestra comunidad de amantes de las zapatillas y descubre una amplia
+              gama de opciones para llevar tus pasos al siguiente nivel. ¡Explora nuestra tienda y encuentra tus
+              zapatillas ideales con nosotros!</span></h6>
+      </div>
+      <div class="col-12 col-md-6 mt-5 d-flex align-items-center">
+        <img src="https://actuasolutions.com/wp-content/uploads/2021/05/Quienes-somos-05.png" class="img-fluid"
+          alt="imagen de seccion quienes somos">
+      </div>
+    </div>
+
+    <!-- SECCION NOSOTROS -->
+    <section class="mb-5 pt-5">
+      <div class="row m-0">
+        <div class="col-12 text-center">
+          <h1 class="fw-bold">Nuestro Equipo</h1>
+          <h5 class="text-dark-emphasis">Nuestro equipo de trabajo está compuesto por expertos en diseño web, desarrollo y
+            marketing digital. <br> <span class="text-primary-emphasis">Con nuestra pasión por la innovación y el
+              compromiso con la excelencia, estamos listos para llevar tu presencia en la web al siguiente nivel.</span>
+          </h5>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="../img/nelson_foto_de_frente.png" alt="" class="rounded-circle">
+          <h3>Nelson Robles</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="../img/foto-card.jpg" alt="" class="rounded-circle">
+          <h3>Abril Farfan</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="../img/p1 (1).jpg" alt="" class="rounded-circle">
+          <h3>Juan Cruz Infante</h3>
+        </div>
+        <div class="col-12 col-sm-3 text-center">
+          <img src="../img/nicolas-chia.jpeg.jpg" alt="" class="rounded-circle">
+          <h3>Nicolas Chia</h3>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="container-fluid border-top mt-5">
+      <div class="row ps-md-5 pb-5 text-center text-sm-left">
+          <div class="col-12 col-md-3 mt-5">
+              <h4>REDES SOCIALES</h4>
+              <ul>
+                  <li><i class="fa-brands fa-instagram pe-2"></i><a href="./error404.html">texder</a></li>
+                  <li><i class="fa-brands fa-facebook pe-2"></i><a href="./error404.html">texder</a></li>
+                  <li><i class="fa-brands fa-twitter pe-2"></i><a href="./error404.html">texder</a></li>
+
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>PRODUCTOS</h4>
+              <ul>
+                  <li><a href="./error404.html">Calzado</a></li>
+                  <li><a href="./error404.html">Ropa</a></li>
+                  <li><a href="./error404.html">Accesorios</a></li>
+                  <li><a href="./error404.html">Botines</a></li>
+                  <li><a href="./error404.html">Rompevientos</a></li>
+                  <li><a href="./error404.html">Conjuntos</a></li>
+                  <li><a href="./error404.html">Ojotas</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>ASISTENCIA</h4>
+              <ul>
+                  <li><a href="./error404.html">Dudas Frecuentes</a></li>
+                  <li><a href="./error404.html">Realizar Pedidos</a></li>
+                  <li><a href="./error404.html">Productos adidas</a></li>
+                  <li><a href="./error404.html">Pago</a></li>
+                  <li><a href="./error404.html">Envio</a></li>
+              </ul>
+          </div>
+          <div class="col-12 col-md-3 mt-5">
+              <h4>EMPRESA</h4>
+              <ul>
+                  <li><a href="./error404.html">Acerca de nosotros</a></li>
+                  <li><a href="./error404.html">Trabaja en Texder</a></li>
+                  <li><a href="./error404.html">Prensa</a></li>
+                  <li><a href="./error404.html">Informacion corporativa</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="row terycon p-2">
+          <div class="col-12 pb-2">
+              <ul class="text-center d-md-flex justify-content-center">
+                  <li class="me-3"><a href="" class="white">Cookies</a></li>
+                  <li class="me-3"><a href="" class="white">Nuestros Datos</a></li>
+                  <li class="me-3"><a href="" class="white">Terminos y condiciones</a></li>
+                  <li class="me-3"><a href="" class="white">Politica de privacidad</a></li>
+                  <li class="me-3"><a href="" class="white">Reclamos</a></li>
+              </ul>
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+              <p class="p-0 m-0">© 2023 Texder Argentina</p>
+          </div>
+      </div>
+  </footer>
+
+  </div>
+
+  <script src="../js/index.js"></script>
+  <script src="../js/navcheck.js"></script>
+  <script src="../js/login.js"></script>
+  <script src="../js/register.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/carrito.js"></script>
+  <!-- BOOTSTRAP -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <!-- SWEET ALERT -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.19/dist/js/uikit-icons.min.js"></script>
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/472eb7a910.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
